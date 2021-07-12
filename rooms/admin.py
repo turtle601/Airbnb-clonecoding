@@ -36,6 +36,8 @@ class RoomAdmin(admin.ModelAdmin):
         "check_in",
         "host",
         "count_amenities",
+        "count_photos",
+        "room_review_avg",
     ]
 
     list_filter = (
@@ -60,10 +62,13 @@ class RoomAdmin(admin.ModelAdmin):
     )
 
     def count_amenities(self, obj):
-        print(obj.amenities.all())
-        return "Potato"
+        
+        return obj.amenities.count()
 
-
+    def count_photos(self, obj):
+        
+        return obj.photos.count()
+        
 @admin.register(models.Photo)
 class PhotoAdmin(admin.ModelAdmin):
 

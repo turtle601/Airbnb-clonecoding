@@ -24,3 +24,15 @@ class CustomUserAdmin(UserAdmin):
             },
         ),
     )
+
+    list_display = [
+        "username",
+        "first_name",
+        "last_name",
+        "language",
+        "superhost",
+    ]
+
+    list_filter = [
+        "superhost",
+    ]
